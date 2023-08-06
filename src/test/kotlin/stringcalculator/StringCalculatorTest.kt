@@ -2,6 +2,8 @@ package stringcalculator
 
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
+import stringcalculator.calculator.util.Add
+import stringcalculator.calculator.util.StringCalculator
 
 class StringCalculatorTest : BehaviorSpec({
     Given("정수 문자열 리스트") {

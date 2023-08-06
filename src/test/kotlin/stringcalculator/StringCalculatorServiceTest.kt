@@ -30,7 +30,7 @@ class StringCalculatorServiceTest : BehaviorSpec({
         val input = ""
         When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
             val result = StringCalculateService.sum(input)
-            Then("합을 반환한다") {
+            Then("정수 0을 반환한다") {
                 result shouldBe 0
             }
         }
@@ -40,7 +40,7 @@ class StringCalculatorServiceTest : BehaviorSpec({
         val input = null
         When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
             val result = StringCalculateService.sum(input)
-            Then("합을 반환한다") {
+            Then("정수 0을 반환한다") {
                 result shouldBe 0
             }
         }

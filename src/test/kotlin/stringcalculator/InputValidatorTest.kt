@@ -2,6 +2,7 @@ package stringcalculator
 
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
+import stringcalculator.validator.InputValidator
 
 class InputValidatorTest : BehaviorSpec({
 

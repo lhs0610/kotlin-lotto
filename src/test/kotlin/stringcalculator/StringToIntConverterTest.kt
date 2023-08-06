@@ -2,6 +2,7 @@ package stringcalculator
 
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
+import stringcalculator.converter.StringToIntConverter
 
 class StringToIntConverterTest : BehaviorSpec ({
 

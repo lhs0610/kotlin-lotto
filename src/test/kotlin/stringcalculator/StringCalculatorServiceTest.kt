@@ -1,5 +1,6 @@
 package stringcalculator
 
+import io.kotest.assertions.throwables.shouldThrow
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 import stringcalculator.service.StringCalculateService
@@ -42,6 +43,17 @@ class StringCalculatorServiceTest : BehaviorSpec({
             val result = StringCalculateService.sum(input)
             Then("정수 0을 반환한다") {
                 result shouldBe 0
+            }
+        }
+    }
+
+    Given("음수 포함 패턴 문자열 입력") {
+        val illegalInput = "//;\n-6;5;3"
+        When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
+            Then("RuntimeException 예외가 발생한다") {
+                shouldThrow<RuntimeException> {
+                    StringCalculateService.sum(illegalInput)
+                }
             }
         }
     }

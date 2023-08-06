@@ -8,7 +8,7 @@ class StringCalculatorServiceTest : BehaviorSpec({
 
     Given("쉼표(,) 또는 콜론(:)을 구분자로 가지는 문자열 입력") {
         val input = "23,4:6"
-        When("주어진 리스트를 인자로 StringCalculator의 sum 함수를 실행하면") {
+        When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
             val result = StringCalculateService.sum(input)
             Then("합을 반환한다") {
                 result shouldBe 33
@@ -18,10 +18,30 @@ class StringCalculatorServiceTest : BehaviorSpec({
 
     Given("커스텀 구분자 지정 및 해당 구분자로 분할되는 문자열 입력") {
         val customInput = "//;\n6;5;3"
-        When("주어진 리스트를 인자로 StringCalculator의 sum 함수를 실행하면") {
+        When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
             val result = StringCalculateService.sum(customInput)
             Then("합을 반환한다") {
                 result shouldBe 14
+            }
+        }
+    }
+
+    Given("빈 문자열 입력") {
+        val input = ""
+        When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
+            val result = StringCalculateService.sum(input)
+            Then("합을 반환한다") {
+                result shouldBe 0
+            }
+        }
+    }
+
+    Given("null 입력") {
+        val input = null
+        When("주어진 리스트를 인자로 StringCalculatorService의 sum 함수를 호출하면") {
+            val result = StringCalculateService.sum(input)
+            Then("합을 반환한다") {
+                result shouldBe 0
             }
         }
     }

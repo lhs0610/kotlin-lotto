@@ -2,6 +2,7 @@ package lotto
 
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.ints.shouldBeInRange
+import lotto.component.RandomIntGenerator
 
 class RandomIntGeneratorTest : BehaviorSpec({
     Given("두 정수로 표현된 정수 범위 입력") {

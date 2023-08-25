@@ -11,7 +11,7 @@ class RandomIntGeneratorTest : BehaviorSpec({
         When("주어진 인자로 RandomIntGenerator 의 generate 함수를 실행하면") {
             val generate = RandomIntGenerator.generate(rangeStart, rangeEnd)
             Then("입력된 범위에 포함되는 정수를 반환한다.") {
-                generate.shouldBeInRange(IntRange(rangeStart, rangeEnd))
+                generate shouldBeInRange(IntRange(rangeStart, rangeEnd))
             }
         }
     }

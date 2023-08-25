@@ -3,7 +3,6 @@ package lotto
 import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.inspectors.forAll
 import io.kotest.matchers.ints.shouldBeInRange
-import io.kotest.matchers.types.shouldBeInstanceOf
 import lotto.component.RandomIntGenerator
 import lotto.domain.Lotto
 

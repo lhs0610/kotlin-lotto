@@ -9,7 +9,7 @@ import lotto.component.LottoFactory645
 class LottoFactoryTest : BehaviorSpec({
     Given("생성할 로또의 개수") {
         val rangeStart = LottoFactory645.RANGE_START
-        val rangeEnd = LottoFactory645.RANDE_END
+        val rangeEnd = LottoFactory645.RANGE_END
         val size = LottoFactory645.SIZE_NUMBERS
         val quantity = 5
         When("주어진 인자로 LottoFactory645 의 generate 함수를 실행하면 ") {

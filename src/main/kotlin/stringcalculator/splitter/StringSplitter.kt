@@ -1,6 +1,6 @@
 package stringcalculator.splitter
 
-object StringSplitter: Splitter<String> {
+object StringSplitter : Splitter<String> {
 
     private const val DELIMITER_COMMA = ","
     private const val DELIMITER_COLON = ":"
@@ -11,6 +11,8 @@ object StringSplitter: Splitter<String> {
 
     private const val INDEX_CUSTOM_DELIMITER = 1
     private const val INDEX_REAL_INPUT = 2
+
+    private val customInputRegex = Regex(REGEX_CUSTOM_INPUT)
 
     override fun split(input: String): List<String> {
         if (hasCustomPattern(input)) {
@@ -25,18 +27,17 @@ object StringSplitter: Splitter<String> {
     }
 
     private fun customDelimiterSplit(input: String): List<String> {
-        val matchResult = Regex(REGEX_CUSTOM_INPUT).find(input)
+        val matchResult = customInputRegex.find(input)
         return matchResult?.let {
             val customDelimiter = it.groupValues[INDEX_CUSTOM_DELIMITER]
             val realInput = it.groupValues[INDEX_REAL_INPUT]
 
             realInput.split(customDelimiter)
-        } ?: listOf()
+        } ?: emptyList()
     }
 
     private fun hasCustomPattern(input: String): Boolean {
         val matchResult = Regex("//(.)\n").find(input)
         return matchResult != null
     }
-
 }

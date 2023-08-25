@@ -5,7 +5,7 @@ import io.kotest.core.spec.style.BehaviorSpec
 import io.kotest.matchers.shouldBe
 import stringcalculator.converter.StringToIntConverter
 
-class StringToIntConverterTest : BehaviorSpec ({
+class StringToIntConverterTest : BehaviorSpec({
 
     Given("변환될 수 있는 정수 문자열") {
         val input = "3012"

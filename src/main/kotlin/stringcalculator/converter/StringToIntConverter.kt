@@ -1,7 +1,5 @@
 package stringcalculator.converter
 
-import java.lang.IllegalArgumentException
-
 object StringToIntConverter {
 
     private const val ERROR_INPUT_CANNOT_BE_NEGATIVE = "입력값은 음수일 수 없습니다."

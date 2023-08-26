@@ -11,11 +11,17 @@ object LottoFactory645 : LottoFactory {
 
     override fun generate(quantity: Int): List<Lotto> {
         val lottoList = mutableListOf<Lotto>()
-        repeat(quantity) { lottoList.add(Lotto(RandomIntGenerator.generateList(
-            rangeStart = RANGE_START,
-            rangeEnd = RANGE_END,
-            size = SIZE_NUMBERS
-        ))) }
+        repeat(quantity) {
+            lottoList.add(
+                Lotto(
+                    RandomIntGenerator.generateSet(
+                        rangeStart = RANGE_START,
+                        rangeEnd = RANGE_END,
+                        size = SIZE_NUMBERS
+                    )
+                )
+            )
+        }
         return lottoList.toList()
     }
 }

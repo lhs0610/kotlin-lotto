@@ -8,9 +8,10 @@ object RandomIntGenerator {
         return (rangeStart..rangeEnd).random()
     }
 
-    fun generateList(rangeStart: Int, rangeEnd: Int, size: Int): List<Int> {
-        val randomIntList = mutableListOf<Int>()
-        repeat(size) { randomIntList.add(RandomIntGenerator.generate(rangeStart = rangeStart, rangeEnd = rangeEnd)) }
-        return randomIntList.toList()
+    fun generateSet(rangeStart: Int, rangeEnd: Int, size: Int): Set<Int> {
+        val candidate = (rangeStart..rangeEnd).toMutableList()
+        val randomIntList = mutableSetOf<Int>()
+        repeat(size) { randomIntList.add(candidate.removeAt(candidate.indices.random())) }
+        return randomIntList.toSet()
     }
 }

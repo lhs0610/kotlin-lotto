@@ -23,7 +23,7 @@ class RandomIntGeneratorTest : BehaviorSpec({
         val rangeEnd = 33
         val size = 6
         When("주어진 인자로 RandomIntGenerator 의 generateList 함수를 실행하면") {
-            val generate = RandomIntGenerator.generateList(rangeStart, rangeEnd, size)
+            val generate = RandomIntGenerator.generateSet(rangeStart, rangeEnd, size)
             Then("입력된 범위에 포함되는 정수를 반환한다.") {
                 generate.size shouldBe size
                 generate.forAll {

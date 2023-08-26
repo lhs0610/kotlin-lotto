@@ -1,6 +1,9 @@
 package lotto.component
 
 object RandomIntGenerator {
+
+    private const val SUBLIST_START_INDEX = 0
+
     /**
      * 제공받은 범위에 포함되는 무작위 정수를 반환한다.
      */
@@ -9,9 +12,9 @@ object RandomIntGenerator {
     }
 
     fun generateSet(rangeStart: Int, rangeEnd: Int, size: Int): Set<Int> {
-        val candidate = (rangeStart..rangeEnd).toMutableList()
-        val randomIntList = mutableSetOf<Int>()
-        repeat(size) { randomIntList.add(candidate.removeAt(candidate.indices.random())) }
-        return randomIntList.toSet()
+        return (rangeStart..rangeEnd).toList()
+            .shuffled()
+            .subList(SUBLIST_START_INDEX, size)
+            .toSet()
     }
 }
